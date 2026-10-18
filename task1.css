@@ -1,0 +1,166 @@
+/* Task 1 - own styles on top of Bootstrap 5.3 */
+:root {
+  --green: #0F6B5F;
+  --amber: #F2A93B;
+  --ink:   #16302B;
+  --field: #F4F7F5;
+  --line:  #E6EFEC;
+
+  --bs-body-font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --bs-body-color: var(--ink);
+  --bs-body-color-rgb: 22, 48, 43;
+  --bs-border-radius: .75rem;          /* rounded corners for every control */
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  color: var(--ink);
+  background: radial-gradient(circle at 50% 0%, #f1f6f4 0%, var(--line) 70%);
+  min-height: 100vh;
+}
+
+/* Card */
+.ticket-card {
+  border: 0;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 18px 45px rgba(22, 48, 43, .16);
+}
+.ticket-header {
+  background: var(--green);
+  color: #fff;
+  border: 0;
+  padding: 1.25rem 1.25rem;
+}
+.ticket-header h1 { font-weight: 700; letter-spacing: .01em; color: #fff; }
+@media (min-width: 768px) {
+  .ticket-header { padding: 2rem 3rem; }
+  .ticket-header h1 { font-size: 1.6rem; }
+}
+
+/* Labels */
+.form-label,
+legend.form-label {
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--ink);
+  float: none;
+  width: auto;
+  margin-bottom: .4rem;
+}
+
+/* Text fields */
+.form-control,
+.form-select {
+  background-color: var(--field);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: .85rem;
+  padding: .6rem .85rem;
+}
+.form-control::placeholder { color: #6f837e; opacity: 1; }
+.form-control:focus,
+.form-select:focus {
+  background-color: #fff;
+  border-color: var(--green);
+  box-shadow: 0 0 0 .2rem rgba(15, 107, 95, .2);
+  color: var(--ink);
+}
+
+/* Floating labels: the label always stays small on top, the placeholder
+   (Astana / Almaty) is shown inside the field. */
+.form-floating > .form-control {
+  height: 3.4rem;
+  min-height: 3.4rem;
+  padding: 1.45rem .85rem .35rem;
+}
+.form-floating > .form-control::placeholder { color: var(--ink); opacity: .85; }
+.form-floating > label {
+  padding: .6rem .85rem;
+  font-size: .85rem;
+  color: var(--ink);
+  opacity: .6;
+  transform: scale(.82) translateY(-.2rem);
+}
+.form-floating > label::after { display: none; }
+
+/* Radios, checkbox, switch */
+.form-check-label { font-size: .8rem; }
+.form-check-input { border-color: #8aa29c; }
+.form-check-input:checked {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+.form-check-input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 .2rem rgba(15, 107, 95, .25);
+}
+.form-switch .form-check-input { width: 2rem; }
+
+/* One way / Round trip */
+.trip-toggle {
+  border: 1px solid var(--green);
+  border-radius: 50rem;
+  overflow: hidden;
+  background: #fff;
+}
+.trip-toggle .btn {
+  border: 0;
+  border-radius: 0;
+  color: var(--green);
+  font-size: .8rem;
+  font-weight: 600;
+  padding: .55rem 1.4rem;
+}
+.trip-toggle .btn-check:checked + .btn {
+  background: var(--green);
+  color: #fff;
+}
+.trip-toggle .btn-check:focus-visible + .btn {
+  outline: 3px solid var(--amber);
+  outline-offset: -3px;
+}
+
+/* Phone prefix */
+.input-group-text {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+/* Buttons */
+.btn-find,
+.btn-clear {
+  border-radius: 50rem;
+  font-size: .85rem;
+  font-weight: 700;
+  padding: .65rem 1.6rem;
+}
+.btn-find {
+  background: var(--amber);
+  border: 1px solid var(--amber);
+  color: #fff;
+}
+.btn-find:hover,
+.btn-find:focus-visible {
+  background: #e29a28;
+  border-color: #e29a28;
+  color: #fff;
+}
+.btn-clear {
+  background: #fff;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+}
+.btn-clear:hover,
+.btn-clear:focus-visible {
+  background: var(--ink);
+  color: #fff;
+}
+.btn-find:focus-visible,
+.btn-clear:focus-visible {
+  box-shadow: 0 0 0 .2rem rgba(15, 107, 95, .3);
+}
